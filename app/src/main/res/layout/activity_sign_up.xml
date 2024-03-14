@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="367dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/edtName"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:autofillHints="Name"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="Name"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtMobileNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <EditText
+        android:id="@+id/edtSUsername"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="Username"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtSPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtSPassword"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="545dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtSUsername"/>
+
+    <EditText
+        android:id="@+id/edtAddress"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="52dp"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="Home Address"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtSUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edtMobileNumber"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="Mobile Number"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSSignIn"
+        android:layout_width="330dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/secondary_color"
+        android:text="@string/Sign_In"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/amiko"
+        android:text="@string/Account_message_2"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSSignUp" />
+
+    <Button
+        android:id="@+id/btnSSignUp"
+        android:layout_width="330dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="@color/main_color"
+        android:text="@string/Sign_Up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtSUsername" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

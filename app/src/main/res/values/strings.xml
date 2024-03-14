@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cupcake_Factory</string>
+    <string name="Sign_In">Sign In</string>
+    <string name="Sign_Up">Sign Up</string>
+    <string name="Account_message">Don\'t Have an Account?</string>
+    <string name="Account_message_2">Already Have an Account?</string>
+</resources>

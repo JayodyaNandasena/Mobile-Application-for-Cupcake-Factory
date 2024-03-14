@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "487271734623",
+    "project_id": "cupcake-factory-1cf0c",
+    "storage_bucket": "cupcake-factory-1cf0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487271734623:android:74f026529dbfe0b1b8eaea",
+        "android_client_info": {
+          "package_name": "com.example.cupcake_factory"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFzMT3P2X7jR-EUUZLha5BuhIkvx3GKn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

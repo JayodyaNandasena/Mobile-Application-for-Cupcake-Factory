@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="367dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Name"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text="Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvName"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="40dp"
+        android:autofillHints="Name"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Name"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txvUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvUsername"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="40dp"
+        android:autofillHints="Name"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Name"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text="Address"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txvAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Name"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text="Mobile Number"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txvMobileNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvAddress"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="40dp"
+        android:autofillHints="Name"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txvMobileNumber"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="338dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="52dp"
+        android:autofillHints="Name"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="387dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="56dp"
+        android:background="@color/main_color"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:elevation="5dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="30dp">
+
+        <ImageButton
+            android:id="@+id/ibtnAHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/home_inactive"
+            app:cardCornerRadius="30dp"/>
+
+        <ImageButton
+            android:id="@+id/ibtnACart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/cart_inactive" />
+
+        <ImageButton
+            android:id="@+id/ibtnAOrders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/orders_inactive" />
+
+        <ImageButton
+            android:id="@+id/ibtnAAccount"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/background_color"
+            app:srcCompat="@drawable/account_active"
+            />
+    </LinearLayout>
+
+    <!--        app:layout_constraintBottom_toTopOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.506"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@id/textView4" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

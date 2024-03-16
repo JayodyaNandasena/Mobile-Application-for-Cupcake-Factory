@@ -11,19 +11,32 @@
         android:layout_width="367dp"
         android:layout_height="73dp"
         android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.565"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textViewHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="My Profile"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView1"
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:autofillHints="Name"
         android:backgroundTint="@color/secondary_text_color_w"
         android:ems="10"
@@ -69,9 +82,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/txvUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/txvName"
+        app:layout_constraintStart_toStartOf="@+id/txvName" />
 
     <TextView
         android:id="@+id/txvUsername"
@@ -152,7 +164,7 @@
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="28dp"
         android:autofillHints="Name"
         android:background="@color/background_color"
         android:backgroundTint="@color/secondary_text_color_w"
@@ -161,13 +173,26 @@
         android:text=""
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/btnASignOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btnASignOut"
+        android:layout_width="330dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/secondary_color"
+        android:text="@string/Sign_Out"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayoutMenu"
         android:layout_width="387dp"
         android:layout_height="39dp"
         android:layout_marginBottom="56dp"
@@ -217,6 +242,8 @@
             app:srcCompat="@drawable/account_active"
             />
     </LinearLayout>
+
+
 
     <!--        app:layout_constraintBottom_toTopOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->

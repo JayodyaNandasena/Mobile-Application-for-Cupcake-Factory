@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCupcakesActivity">
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="367dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintBottom_toTopOf="@id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/amiko"
+        android:text="Add New Category"
+        android:textAlignment="center"
+        android:textColor="@color/main_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtACtName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <EditText
+        android:id="@+id/edtACtName"
+        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+        android:layout_width="341dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/secondary_color"
+        android:backgroundTint="@color/secondary_text_color_w"
+        android:drawableLeft="@drawable/category"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:fontFamily="@font/amiko"
+        android:hint="New Cupcake Category Name"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btnACtAdd"
+        android:layout_width="230dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/main_color"
+        android:text="Add Category"
+        app:layout_constraintEnd_toEndOf="@+id/edtACtName"
+        app:layout_constraintStart_toStartOf="@+id/edtACtName"
+        app:layout_constraintTop_toBottomOf="@+id/edtACtName" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/amiko"
+        android:text="Existing Cupcake Categories \n (For Reference)"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edtACtName"
+        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintStart_toStartOf="@+id/edtACtName"
+        app:layout_constraintTop_toBottomOf="@+id/btnACtAdd" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMenu"
+        android:layout_width="387dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="56dp"
+        android:background="@color/main_color"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:elevation="5dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="30dp">
+
+        <ImageButton
+            android:id="@+id/ibtnACHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/background_color"
+            app:srcCompat="@drawable/home_active"
+            app:cardCornerRadius="30dp"/>
+
+        <ImageButton
+            android:id="@+id/ibtnACCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/cart_inactive" />
+
+        <ImageButton
+            android:id="@+id/ibtnACOrders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/orders_inactive" />
+
+        <ImageButton
+            android:id="@+id/ibtnACAccount"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/main_color"
+            app:srcCompat="@drawable/account_inactive"
+            />
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

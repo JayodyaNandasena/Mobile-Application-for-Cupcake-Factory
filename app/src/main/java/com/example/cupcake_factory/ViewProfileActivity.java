@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ViewProfileActivity extends AppCompatActivity {
 
     TextView profileName, profileAddress, profileMobile, profileUsername;
+    Button btnSignOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +29,17 @@ public class ViewProfileActivity extends AppCompatActivity {
         profileAddress = findViewById(R.id.txvAddress);
         profileUsername = findViewById(R.id.txvUsername);
         profileMobile = findViewById(R.id.txvMobileNumber);
+        btnSignOut=findViewById(R.id.btnASignOut);
+
         showAllUserData();
-//        editProfile.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                passUserData();
-//            }
-//        });
+        btnSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), SigninActivity.class);
+                startActivity(intent);
+                ViewProfileActivity.this.finish();
+            }
+        });
     }
     public void showAllUserData(){
         Intent intent = getIntent();

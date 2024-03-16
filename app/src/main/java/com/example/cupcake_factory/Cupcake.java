@@ -119,7 +119,7 @@ public class Cupcake {
             throw ex;
         }
     }
-    public List<Cupcake> GetBooks(SQLiteDatabase db)
+    public List<Cupcake> GetCupcakes(SQLiteDatabase db)
     {
         try
         {

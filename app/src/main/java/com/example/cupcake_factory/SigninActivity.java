@@ -90,7 +90,7 @@ public class SigninActivity extends AppCompatActivity {
                         signInUsername.setError(null);
                         String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                         String addressFromDB = snapshot.child(userUsername).child("address").getValue(String.class);
-                        String mobileFromDB = snapshot.child(userUsername).child("mobileNumber").getValue(String.class);
+                        Integer mobileFromDB = snapshot.child(userUsername).child("mobileNumber").getValue(Integer.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
                         Intent intent = new Intent(SigninActivity.this, ViewProfileActivity.class);
                         intent.putExtra("name", nameFromDB);

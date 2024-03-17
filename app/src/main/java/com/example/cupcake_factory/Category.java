@@ -1,22 +1,23 @@
 package com.example.cupcake_factory;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
-
-    private int Id;
     private String name;
 
-    public int getId() {
-        return Id;
+    public Category() {
     }
 
-    public void setId(int id) {
-        Id = id;
+    public Category(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -27,13 +28,20 @@ public class Category {
         this.name = name;
     }
 
-    public void Save(SQLiteDatabase db)
+    @NonNull
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    public boolean Save(SQLiteDatabase db)
     {
         try {
             ContentValues values= new ContentValues();
-            values.put("id",Id);
+           // values.put("id",Id);
             values.put("name",name);
-            db.insert("Category",null,values);
+            db.insert("categories",null,values);
+            return true;
         }
         catch (Exception ex)
         {
@@ -44,9 +52,9 @@ public class Category {
     {
         try {
             ContentValues values= new ContentValues();
-            values.put("id",Id);
+            //values.put("id",Id);
             values.put("name",name);
-            db.update("Category",values,"id= "+Id,null);
+            //db.update("categories",values,"id= "+Id,null);
         }
         catch (Exception ex)
         {
@@ -57,7 +65,7 @@ public class Category {
     {
         try {
 
-            db.delete("Category","id= "+Id,null);
+            //db.delete("categories","id= "+Id,null);
         }
         catch (Exception ex)
         {
@@ -68,32 +76,30 @@ public class Category {
     {
         try
         {
-            List<Category> categories= new ArrayList<Category>();
-            String query="select id,name from category";
+            List<Category> categoryList= new ArrayList<Category>();
+            String query="select id,name from categories";
+
             Cursor cursor= db.rawQuery(query,null);
+
             if(cursor.moveToFirst())
             {
                 do {
                     Category category= new Category();
 
-                    category.setId(cursor.getInt(0));
+                    //category.setId(cursor.getInt(0));
                     category.setName(cursor.getString(1));
 
-                    categories.add(category);
-
+                    categoryList.add(category);
 
                 }while (cursor.moveToNext());
             }
-            return categories;
+            return categoryList;
         }
         catch (Exception ex)
         {
             throw ex;
         }
     }
-
-
-
 
 }
 

@@ -88,15 +88,19 @@ public class SigninActivity extends AppCompatActivity {
                     String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
                     if (passwordFromDB.equals(userPassword)) {
                         signInUsername.setError(null);
+
                         String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
                         String addressFromDB = snapshot.child(userUsername).child("address").getValue(String.class);
                         Integer mobileFromDB = snapshot.child(userUsername).child("mobileNumber").getValue(Integer.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+
                         Intent intent = new Intent(SigninActivity.this, ViewProfileActivity.class);
+
                         intent.putExtra("name", nameFromDB);
                         intent.putExtra("address", addressFromDB);
                         intent.putExtra("mobileNumber", mobileFromDB);
                         intent.putExtra("username", usernameFromDB);
+
                         startActivity(intent);
                     } else {
                         signInPassword.setError("Invalid Credentials");

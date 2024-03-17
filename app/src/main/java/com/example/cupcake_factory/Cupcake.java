@@ -8,20 +8,21 @@ import java.util.List;
 
 public class Cupcake {
 
-    private int Id;
     private String name;
     private String description;
     private double unitPrice;
-    private String cakeBase;
-    private String frosting;
-    private byte[] photo;
+    private String category;
+    private String photoURL;
 
-    public int getId() {
-        return Id;
+    public Cupcake() {
     }
 
-    public void setId(int id) {
-        Id = id;
+    public Cupcake(String name, String description, double unitPrice, String category, String photoURL) {
+        this.name = name;
+        this.description = description;
+        this.unitPrice = unitPrice;
+        this.category = category;
+        this.photoURL = photoURL;
     }
 
     public String getName() {
@@ -48,111 +49,20 @@ public class Cupcake {
         this.unitPrice = unitPrice;
     }
 
-    public String getCakeBase() {
-        return cakeBase;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCakeBase(String cakeBase) {
-        this.cakeBase = cakeBase;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getFrosting() {
-        return frosting;
+    public String getPhotoURL() {
+        return photoURL;
     }
 
-    public void setFrosting(String frosting) {
-        this.frosting = frosting;
+    public void setPhotoURL(String photoURL) {
+        this.photoURL = photoURL;
     }
-
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
-
-    public void Save(SQLiteDatabase db)
-    {
-        try {
-            ContentValues values= new ContentValues();
-            values.put("id",Id);
-            values.put("name",name);
-            values.put("description",description);
-            values.put("unitPrice",unitPrice);
-            values.put("cakeBase",cakeBase);
-            values.put("frosting",frosting);
-            values.put("photo",photo);
-            db.insert("cupcake",null,values);
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
-    public void Update(SQLiteDatabase db)
-    {
-        try {
-            ContentValues values= new ContentValues();
-            values.put("id",Id);
-            values.put("name",name);
-            values.put("description",description);
-            values.put("unitPrice",unitPrice);
-            values.put("cakeBase",cakeBase);
-            values.put("frosting",frosting);
-            values.put("photo",photo);
-            db.update("cupcake",values,"id= "+Id,null);
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
-    public void Delete(SQLiteDatabase db)
-    {
-        try {
-
-            db.delete("cupcake","id= "+Id,null);
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
-    public List<Cupcake> GetCupcakes(SQLiteDatabase db)
-    {
-        try
-        {
-            List<Cupcake> cupcakes= new ArrayList<Cupcake>();
-            String query="select id,name,description,unitPrice,cakeBase,frosting,photo from cupcake";
-            Cursor cursor= db.rawQuery(query,null);
-            if(cursor.moveToFirst())
-            {
-                do {
-                    Cupcake cupcake= new Cupcake();
-
-                    cupcake.setId(cursor.getInt(0));
-                    cupcake.setName(cursor.getString(1));
-                    cupcake.setDescription(cursor.getString(2));
-                    cupcake.setUnitPrice(cursor.getDouble(3));
-                    cupcake.setCakeBase(cursor.getString(4));
-                    cupcake.setFrosting(cursor.getString(5));
-                    cupcake.setPhoto(cursor.getBlob(6));
-                    cupcakes.add(cupcake);
-
-
-                }while (cursor.moveToNext());
-            }
-            return cupcakes;
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
-
-
-
-
 }
 

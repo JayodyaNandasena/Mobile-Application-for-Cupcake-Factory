@@ -1,206 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddCupcakesActivity">
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="367dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintBottom_toTopOf="@id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linearLayoutMenu">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="338dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="24dp"
-        android:fontFamily="@font/amiko"
-        android:text="@string/Heading_Add_Cupcakes"
-        android:textAlignment="center"
-        android:textColor="@color/main_color"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edtACtName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="0.102" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="150dp">
 
-    <EditText
-        android:id="@+id/edtACtName"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="338dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/secondary_color"
-        android:backgroundTint="@color/secondary_text_color_w"
-        android:drawableLeft="@drawable/cake"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:fontFamily="@font/amiko"
-        android:hint="Cupcake Name"
-        android:inputType="text"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="367dp"
+                android:layout_height="73dp"
+                android:layout_marginTop="56dp"
+                app:layout_constraintBottom_toTopOf="@id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/edtACDescription"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="338dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/secondary_color"
-        android:backgroundTint="@color/secondary_text_color_w"
-        android:drawableLeft="@drawable/cake"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:fontFamily="@font/amiko"
-        android:hint="Cupcake Description"
-        android:inputType="text"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtACtName" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/amiko"
+                android:text="@string/Heading_Add_Cupcakes"
+                android:textAlignment="center"
+                android:textColor="@color/main_color"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/edtACName"
+                app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                app:layout_constraintStart_toStartOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8"
+                app:layout_constraintVertical_bias="0.102" />
 
-    <EditText
-        android:id="@+id/edtACPrice"
-        style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
-        android:layout_width="338dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/secondary_color"
-        android:backgroundTint="@color/secondary_text_color_w"
-        android:drawableLeft="@drawable/price"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:fontFamily="@font/amiko"
-        android:hint="Unit Price in Rs."
-        android:inputType="numberDecimal"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtACDescription" />
+            <EditText
+                android:id="@+id/edtACName"
+                style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+                android:layout_width="338dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/secondary_color"
+                android:backgroundTint="@color/secondary_text_color_w"
+                android:drawableLeft="@drawable/cake"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/amiko"
+                android:hint="Cupcake Name"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="338dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/amiko"
-        android:text="Cupcake Image"
-        android:textAlignment="textStart"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spnCategory" />
+            <EditText
+                android:id="@+id/edtACDescription"
+                style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+                android:layout_width="338dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/secondary_color"
+                android:backgroundTint="@color/secondary_text_color_w"
+                android:drawableLeft="@drawable/cake"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/amiko"
+                android:hint="Cupcake Description"
+                android:inputType="textMultiLine"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/edtACName"
+                app:layout_constraintStart_toStartOf="@+id/edtACName"
+                app:layout_constraintTop_toBottomOf="@+id/edtACName" />
 
-    <ImageView
-        android:id="@+id/imgACImage"
-        android:layout_width="155dp"
-        android:layout_height="170dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@id/textView6"
-        app:srcCompat="@drawable/image" />
+            <EditText
+                android:id="@+id/edtACPrice"
+                style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
+                android:layout_width="338dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="20dp"
+                android:gravity="top"
+                android:background="@color/secondary_color"
+                android:backgroundTint="@color/secondary_text_color_w"
+                android:drawableLeft="@drawable/price"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/amiko"
+                android:hint="Unit Price in Rs."
+                android:inputType="numberDecimal"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/edtACDescription"
+                app:layout_constraintStart_toStartOf="@+id/edtACDescription"
+                app:layout_constraintTop_toBottomOf="@+id/edtACDescription" />
 
-    <Button
-        android:id="@+id/btnACAddImage"
-        android:layout_width="330dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="@color/secondary_color"
-        android:textColor="@color/black"
-        android:text="Click to Add an Image"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgACImage" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/amiko"
+                android:text="Cupcake Category"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/spnCategory"
+                app:layout_constraintEnd_toEndOf="@+id/edtACPrice"
+                app:layout_constraintStart_toStartOf="@+id/edtACPrice"
+                app:layout_constraintTop_toBottomOf="@+id/edtACPrice" />
 
-    <Button
-        android:id="@+id/btnACtAdd"
-        android:layout_width="230dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/main_color"
-        android:text="Add Cupcake"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnACAddImage" />
+            <Spinner
+                android:id="@+id/spnCategory"
+                android:layout_width="338dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="20dp"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintEnd_toEndOf="@+id/textView7"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="338dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/amiko"
-        android:text="Cupcake Category"
-        android:textAlignment="textStart"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spnCategory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtACPrice" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/amiko"
+                android:text="Cupcake Image"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/spnCategory"
+                app:layout_constraintStart_toStartOf="@+id/spnCategory"
+                app:layout_constraintTop_toBottomOf="@id/spnCategory" />
 
-    <Spinner
-        android:id="@+id/spnCategory"
-        android:layout_width="338dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="20dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            <ImageView
+                android:id="@+id/imgACImage"
+                android:layout_width="155dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@id/textView6"
+                app:srcCompat="@drawable/image" />
+
+            <Button
+                android:id="@+id/btnACAddImage"
+                android:layout_width="330dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/secondary_color"
+                android:textColor="@color/black"
+                android:text="Click to Add an Image"
+                app:layout_constraintEnd_toEndOf="@+id/imgACImage"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/imgACImage"
+                app:layout_constraintTop_toBottomOf="@+id/imgACImage" />
+
+
+            <Button
+                android:id="@+id/btnACAdd"
+                android:layout_width="230dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/main_color"
+                android:text="Add Cupcake"
+                app:layout_constraintEnd_toEndOf="@+id/btnACAddImage"
+                app:layout_constraintStart_toStartOf="@+id/btnACAddImage"
+                app:layout_constraintTop_toBottomOf="@+id/btnACAddImage" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="338dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/amiko"
+                android:text="Don't Have the Required Category?"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/btnACAdd"
+                app:layout_constraintStart_toStartOf="@+id/btnACAdd"
+                app:layout_constraintTop_toBottomOf="@id/btnACAdd" />
+
+            <Button
+                android:id="@+id/btnACNavCt"
+                android:layout_width="230dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/secondary_color"
+                android:text="Go to Add New Categories"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/textView8"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayoutMenu"
-        android:layout_width="387dp"
+        android:layout_width="match_parent"
         android:layout_height="39dp"
-        android:layout_marginBottom="56dp"
-        android:background="@color/main_color"
-        android:orientation="horizontal"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/solid_border_main"
         android:elevation="5dp"
+        android:orientation="horizontal"
         android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
         app:cardCornerRadius="30dp">
 
         <ImageButton
             android:id="@+id/ibtnACHome"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/background_color"
+            android:background="@drawable/solid_border_background"
             app:srcCompat="@drawable/home_active"
-            app:cardCornerRadius="30dp"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"/>
 
         <ImageButton
             android:id="@+id/ibtnACCart"
@@ -224,11 +260,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/main_color"
-            app:srcCompat="@drawable/account_inactive"
-            />
+            app:srcCompat="@drawable/account_inactive" />
     </LinearLayout>
 
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

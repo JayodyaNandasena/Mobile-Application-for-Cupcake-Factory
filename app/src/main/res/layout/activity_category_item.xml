@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".CustomerViewCupcakesActivity"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txvCICategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/amiko"
+            android:text="Cupcake Category"
+            android:textAlignment="textStart"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingStart="16sp"
+            android:paddingEnd="16sp"
+            android:paddingTop="8sp"
+            android:paddingBottom="8sp"
+            app:layout_constraintBottom_toTopOf="@+id/spnCategory"
+            app:layout_constraintEnd_toEndOf="@+id/edtACPrice"
+            app:layout_constraintStart_toStartOf="@+id/edtACPrice"
+            app:layout_constraintTop_toBottomOf="@+id/edtACPrice" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvCategorizedCupcakes"
+            android:padding="16sp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+</RelativeLayout>

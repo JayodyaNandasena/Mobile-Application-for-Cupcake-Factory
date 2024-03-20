@@ -1,4 +1,4 @@
-package com.example.cupcake_factory;
+package com.example.cupcake_factory.model;
 
 public class User {
     private  String name, address, username, password;

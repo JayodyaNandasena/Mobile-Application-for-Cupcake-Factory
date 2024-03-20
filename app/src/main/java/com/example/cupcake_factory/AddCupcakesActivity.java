@@ -5,27 +5,26 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.cupcake_factory.model.Category;
+import com.example.cupcake_factory.model.Cupcake;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -33,19 +32,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AddCupcakesActivity extends AppCompatActivity {
     private EditText edtCName, edtCDesciption, edtCPrice;
     private ImageView imgCPhoto;
     private Button btnCAdd, btnGetImage, btnCtNav;
+    ImageButton btnAdd, btnAccount, btnHome;
     private Spinner dropdown;
     private FirebaseDatabase database;
     private DatabaseReference fdReference;
@@ -64,6 +62,9 @@ public class AddCupcakesActivity extends AppCompatActivity {
         btnCAdd=findViewById(R.id.btnACAdd);
         btnGetImage=findViewById(R.id.btnACAddImage);
         btnCtNav=findViewById(R.id.btnACNavCt);
+        btnAdd = findViewById(R.id.ibtnAdd);
+        btnAccount = findViewById(R.id.ibtnAccount);
+        btnHome = findViewById(R.id.ibtnHome);
         dropdown = (Spinner) findViewById(R.id.spnCategory);
         database=FirebaseDatabase.getInstance();
         fdReference=database.getReference("cupcakes");
@@ -125,6 +126,29 @@ public class AddCupcakesActivity extends AppCompatActivity {
                 Intent intent= new Intent(getApplicationContext(), AddCategoryActivity.class);
                 startActivity(intent);
                 AddCupcakesActivity.this.finish();
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), AddCupcakesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), ViewProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), AdminViewCupcakesActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -21,6 +21,7 @@
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
+        android:layout_marginTop="24dp"
         android:autofillHints="Name"
         android:background="@color/secondary_color"
         android:backgroundTint="@color/secondary_text_color_w"
@@ -29,19 +30,17 @@
         android:hint="Name"
         android:inputType="text"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtMobileNumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/edtSUsername"
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginTop="36dp"
         android:background="@color/secondary_color"
         android:backgroundTint="@color/secondary_text_color_w"
         android:ems="10"
@@ -49,18 +48,17 @@
         android:hint="Username"
         android:inputType="text"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtSPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtAddress" />
+        app:layout_constraintEnd_toEndOf="@+id/edtAddress"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="@+id/edtAddress"
+        app:layout_constraintTop_toBottomOf="@+id/edtName" />
 
     <EditText
         android:id="@+id/edtSPassword"
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="36dp"
         android:background="@color/secondary_color"
         android:backgroundTint="@color/secondary_text_color_w"
         android:ems="10"
@@ -68,9 +66,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtSUsername"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="@+id/edtSUsername"
         app:layout_constraintTop_toBottomOf="@+id/edtSUsername" />
 
     <EditText
@@ -78,7 +76,7 @@
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginTop="36dp"
         android:background="@color/secondary_color"
         android:backgroundTint="@color/secondary_text_color_w"
         android:ems="10"
@@ -86,18 +84,17 @@
         android:hint="Mobile Number"
         android:inputType="number"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/edtAddress"
-        app:layout_constraintTop_toBottomOf="@+id/edtName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/edtName"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/edtName"
+        app:layout_constraintTop_toBottomOf="@+id/edtSPassword" />
 
     <EditText
         android:id="@+id/edtAddress"
         style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense"
         android:layout_width="338dp"
         android:layout_height="46dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
         android:background="@color/secondary_color"
         android:backgroundTint="@color/secondary_text_color_w"
         android:ems="10"
@@ -105,49 +102,45 @@
         android:hint="Home Address"
         android:inputType="text"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edtMobileNumber"
+        app:layout_constraintStart_toStartOf="@+id/edtMobileNumber"
         app:layout_constraintTop_toBottomOf="@+id/edtMobileNumber" />
 
     <Button
         android:id="@+id/btnSSignIn"
         android:layout_width="330dp"
         android:layout_height="51dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/secondary_color"
         android:text="@string/Sign_In"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/amiko"
         android:text="@string/Account_message_2"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnSSignUp"
+        app:layout_constraintStart_toStartOf="@+id/btnSSignUp"
         app:layout_constraintTop_toBottomOf="@+id/btnSSignUp" />
 
     <Button
         android:id="@+id/btnSSignUp"
         android:layout_width="330dp"
         android:layout_height="51dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="@color/main_color"
         android:text="@string/Sign_Up"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/edtSPassword"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/edtSPassword"
+        app:layout_constraintTop_toBottomOf="@+id/edtAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

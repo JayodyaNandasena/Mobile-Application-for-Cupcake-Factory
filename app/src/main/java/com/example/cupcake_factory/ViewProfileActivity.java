@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +21,7 @@ public class ViewProfileActivity extends AppCompatActivity {
 
     TextView profileName, profileAddress, profileMobile, profileUsername;
     Button btnSignOut;
+    ImageButton btnAccount, btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class ViewProfileActivity extends AppCompatActivity {
         profileUsername = findViewById(R.id.txvUsername);
         profileMobile = findViewById(R.id.txvMobileNumber);
         btnSignOut=findViewById(R.id.btnASignOut);
+        btnAccount = findViewById(R.id.ibtnCAccount);
+        btnHome = findViewById(R.id.ibtnCHome);
 
         showAllUserData();
         btnSignOut.setOnClickListener(new View.OnClickListener() {
@@ -40,41 +44,30 @@ public class ViewProfileActivity extends AppCompatActivity {
                 ViewProfileActivity.this.finish();
             }
         });
+        btnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), ViewProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), CustomerViewCupcakesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void showAllUserData(){
         Intent intent = getIntent();
         String nameUser = intent.getStringExtra("name");
         String addressUser = intent.getStringExtra("address");
         String usernameUser = intent.getStringExtra("username");
-        String mobileUser = intent.getStringExtra("mobileNumber");
+        int mobileUser = intent.getIntExtra("mobileNumber", 0);
         profileName.setText(nameUser);
         profileAddress.setText(addressUser);
         profileUsername.setText(usernameUser);
-        profileMobile.setText(mobileUser);
+        profileMobile.setText(String.valueOf(mobileUser));
     }
-//    public void passUserData(){
-//        String userUsername = profileUsername.getText().toString().trim();
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-//        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
-//        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()){
-//                    String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
-//                    String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
-//                    String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
-//                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
-//                    Intent intent = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
-//                    intent.putExtra("name", nameFromDB);
-//                    intent.putExtra("email", emailFromDB);
-//                    intent.putExtra("username", usernameFromDB);
-//                    intent.putExtra("password", passwordFromDB);
-//                    startActivity(intent);
-//                }
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//            }
-//        });
-//    }
 }

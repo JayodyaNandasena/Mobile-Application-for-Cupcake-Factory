@@ -1,22 +1,11 @@
 package com.example.cupcake_factory;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -24,10 +13,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cupcake_factory.model.Category;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,14 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.ByteArrayOutputStream;
-import java.util.Arrays;
-import java.util.List;
-
 public class AddCategoryActivity extends AppCompatActivity {
     EditText edtName;
     TextView edtList;
-    Button btnAdd;
+    Button btnAddCt;
+    ImageButton btnHome, btnAdd, btnAccount;
     FirebaseDatabase database;
     DatabaseReference fdReference;
 
@@ -55,7 +41,10 @@ public class AddCategoryActivity extends AppCompatActivity {
 
         edtName = findViewById(R.id.edtACtName);
         edtList = findViewById(R.id.edtListCategories);
-        btnAdd = findViewById(R.id.btnACtAdd);
+        btnAddCt = findViewById(R.id.btnACtAdd);
+        btnHome = findViewById(R.id.ibtnHome);
+        btnAdd = findViewById(R.id.ibtnAdd);
+        btnAccount = findViewById(R.id.ibtnAccount);
 
         edtList.setMovementMethod(new ScrollingMovementMethod());
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -65,7 +54,7 @@ public class AddCategoryActivity extends AppCompatActivity {
 
         showList();
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        btnAddCt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -96,6 +85,30 @@ public class AddCategoryActivity extends AppCompatActivity {
                         Log.w("AddCategoryActivity", "Failed to read categories.", error.toException());
                     }
                 });
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), AddCupcakesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), ViewProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), AdminViewCupcakesActivity.class);
+                startActivity(intent);
             }
         });
     }

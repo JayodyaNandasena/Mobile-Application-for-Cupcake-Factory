@@ -196,7 +196,7 @@
         android:layout_width="387dp"
         android:layout_height="39dp"
         android:layout_marginBottom="56dp"
-        android:background="@color/main_color"
+        android:background="@drawable/solid_border_main"
         android:orientation="horizontal"
         android:layout_margin="20dp"
         android:layout_weight="1"
@@ -209,16 +209,17 @@
         app:cardCornerRadius="30dp">
 
         <ImageButton
-            android:id="@+id/ibtnAHome"
+            android:id="@+id/ibtnCHome"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/main_color"
             app:srcCompat="@drawable/home_inactive"
-            app:cardCornerRadius="30dp"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"/>
 
         <ImageButton
-            android:id="@+id/ibtnACart"
+            android:id="@+id/ibtnCCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -226,7 +227,7 @@
             app:srcCompat="@drawable/cart_inactive" />
 
         <ImageButton
-            android:id="@+id/ibtnAOrders"
+            android:id="@+id/ibtnCOrders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -234,21 +235,12 @@
             app:srcCompat="@drawable/orders_inactive" />
 
         <ImageButton
-            android:id="@+id/ibtnAAccount"
+            android:id="@+id/ibtnCAccount"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/background_color"
-            app:srcCompat="@drawable/account_active"
-            />
+            android:background="@drawable/solid_border_background"
+            app:srcCompat="@drawable/account_active" />
     </LinearLayout>
-
-
-
-    <!--        app:layout_constraintBottom_toTopOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.506"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="@id/textView4" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

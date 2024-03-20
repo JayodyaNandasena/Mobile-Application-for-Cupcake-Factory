@@ -1,6 +1,5 @@
-package com.example.cupcake_factory;
+package com.example.cupcake_factory.model;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,4 +1,4 @@
-package com.example.cupcake_factory;
+package com.example.cupcake_factory.model;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -15,6 +15,12 @@ public class Cupcake {
     private String photoURL;
 
     public Cupcake() {
+    }
+
+    public Cupcake(String name, double unitPrice, String photoURL) {
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.photoURL = photoURL;
     }
 
     public Cupcake(String name, String description, double unitPrice, String category, String photoURL) {

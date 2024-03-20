@@ -62,7 +62,7 @@ tools:context=".AddCupcakesActivity">
     app:cardCornerRadius="30dp">
 
     <ImageButton
-        android:id="@+id/ibtnACHome"
+        android:id="@+id/ibtnCHome"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -72,7 +72,7 @@ tools:context=".AddCupcakesActivity">
         android:layout_marginEnd="20dp"/>
 
     <ImageButton
-        android:id="@+id/ibtnACCart"
+        android:id="@+id/ibtnCCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -80,7 +80,7 @@ tools:context=".AddCupcakesActivity">
         app:srcCompat="@drawable/cart_inactive" />
 
     <ImageButton
-        android:id="@+id/ibtnACOrders"
+        android:id="@+id/ibtnCOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -88,7 +88,7 @@ tools:context=".AddCupcakesActivity">
         app:srcCompat="@drawable/orders_inactive" />
 
     <ImageButton
-        android:id="@+id/ibtnACAccount"
+        android:id="@+id/ibtnCAccount"
         android:layout_width="20dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

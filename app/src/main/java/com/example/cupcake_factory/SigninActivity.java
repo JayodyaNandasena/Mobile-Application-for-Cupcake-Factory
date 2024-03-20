@@ -94,14 +94,31 @@ public class SigninActivity extends AppCompatActivity {
                         Integer mobileFromDB = snapshot.child(userUsername).child("mobileNumber").getValue(Integer.class);
                         String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
-                        Intent intent = new Intent(SigninActivity.this, ViewProfileActivity.class);
+                        char firstChar = userUsername.charAt(0);
+                        boolean startsWithNumber = Character.isDigit(firstChar);
 
-                        intent.putExtra("name", nameFromDB);
-                        intent.putExtra("address", addressFromDB);
-                        intent.putExtra("mobileNumber", mobileFromDB);
-                        intent.putExtra("username", usernameFromDB);
+                        if (startsWithNumber) {
+                            Intent intent = new Intent(SigninActivity.this, AdminViewCupcakesActivity.class);
 
-                        startActivity(intent);
+                            intent.putExtra("name", nameFromDB);
+                            intent.putExtra("address", addressFromDB);
+                            intent.putExtra("mobileNumber", mobileFromDB);
+                            intent.putExtra("username", usernameFromDB);
+
+                            startActivity(intent);
+
+                        } else {
+                            Intent intent = new Intent(SigninActivity.this, CustomerViewCupcakesActivity.class);
+
+                            intent.putExtra("name", nameFromDB);
+                            intent.putExtra("address", addressFromDB);
+                            intent.putExtra("mobileNumber", mobileFromDB);
+                            intent.putExtra("username", usernameFromDB);
+
+                            startActivity(intent);
+                        }
+
+
                     } else {
                         signInPassword.setError("Invalid Credentials");
                         signInPassword.requestFocus();

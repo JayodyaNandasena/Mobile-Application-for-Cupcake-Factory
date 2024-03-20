@@ -23,28 +23,28 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerViewCupcakesActivity extends AppCompatActivity {
+public class AdminViewCupcakesActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
     RecyclerView recyclerView;
     List<Cupcake> cupcakeList;
     CupcakeItemAdapter adapter;
-    ImageButton btnAccount, btnHome;
+    ImageButton btnHome, btnAdd, btnAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_view_cupcakes);
-        recyclerView = findViewById(R.id.rvCupcakes);
-        btnAccount = findViewById(R.id.ibtnCAccount);
-        btnHome = findViewById(R.id.ibtnCHome);
+        setContentView(R.layout.activity_admin_view_cupcakes);
+        recyclerView = findViewById(R.id.rvACupcakes);
+        btnAdd = findViewById(R.id.ibtnAdd);
+        btnAccount = findViewById(R.id.ibtnAccount);
+        btnHome = findViewById(R.id.ibtnHome);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(CustomerViewCupcakesActivity.this, 1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(AdminViewCupcakesActivity.this, 1);
         recyclerView.setLayoutManager(gridLayoutManager);
         cupcakeList = new ArrayList<>();
-        adapter = new CupcakeItemAdapter(CustomerViewCupcakesActivity.this, cupcakeList);
+        adapter = new CupcakeItemAdapter(AdminViewCupcakesActivity.this, cupcakeList);
         recyclerView.setAdapter(adapter);
         databaseReference = FirebaseDatabase.getInstance().getReference("Cupcakes");
-        //dialog.show();
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -62,6 +62,14 @@ public class CustomerViewCupcakesActivity extends AppCompatActivity {
             }
         });
 
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(), AddCupcakesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btnAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,11 +80,9 @@ public class CustomerViewCupcakesActivity extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getApplicationContext(), CustomerViewCupcakesActivity.class);
+                Intent intent= new Intent(getApplicationContext(), AdminViewCupcakesActivity.class);
                 startActivity(intent);
             }
         });
-
-
     }
 }
